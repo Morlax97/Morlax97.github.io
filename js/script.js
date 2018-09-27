@@ -57,7 +57,7 @@ $("#confirmarconsulta_btn").click(function(){
 
   //Obtener cuenta consulta
   $.ajax({
-    url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+    url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
     type: "GET",
     dataType:"jsonp",
     beforeSend: function() {
@@ -72,7 +72,7 @@ $("#confirmarconsulta_btn").click(function(){
         }
         //Obtener saldo cuenta
         $.ajax({
-          url: "http://www.mocky.io/v2/5b2253412e00002a00e3162f",
+          url: "https://www.mocky.io/v2/5b2253412e00002a00e3162f",
           type: "GET",
           dataType:"jsonp",
           success: function(response){
@@ -104,7 +104,7 @@ $("#confirmarextraccion_btn").click(function() {
 
   //Obtener cuenta a extraer
   $.ajax({
-    url:"http://www.mocky.io/v2/5b2253032e00009100e3162b",
+    url:"https://www.mocky.io/v2/5b2253032e00009100e3162b",
     type: "GET",
     dataType:"jsonp",
     beforeSend: function() {
@@ -120,7 +120,7 @@ $("#confirmarextraccion_btn").click(function() {
 
         //Chequear que la cuenta tenga saldo suficiente
         $.ajax({
-          url:"http://www.mocky.io/v2/5b2253412e00002a00e3162f",
+          url:"https://www.mocky.io/v2/5b2253412e00002a00e3162f",
           type: "GET",
           dataType:"jsonp",
           success: function(response){
@@ -139,7 +139,7 @@ $("#confirmarextraccion_btn").click(function() {
 
               //Realizar la extracción
               $.ajax({
-                url: "http://www.mocky.io/v2/5b2253622e00007b00e31630",
+                url: "https://www.mocky.io/v2/5b2253622e00007b00e31630",
                 data: movimiento,
                 type: "POST",
                 dataType:"jsonp",
@@ -177,7 +177,7 @@ $("#confirmardeposito_btn").click(function() {
 
   //Obtener la cuenta a depositar
   $.ajax({
-    url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+    url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
     type: "GET",
     dataType:"jsonp",
     beforeSend: function() {
@@ -195,7 +195,7 @@ $("#confirmardeposito_btn").click(function() {
         
         //Realizar el deposito
         $.ajax({
-          url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+          url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
           data: movimiento,
           type: "POST",
           dataType:"jsonp",
@@ -228,7 +228,7 @@ $("#confirmartransferencia_btn").click(function() {
 
   //Obtener cuenta de origen
   $.ajax({
-    url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+    url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
     type: "GET",
     dataType:"jsonp",
     beforeSend: function() {
@@ -243,7 +243,7 @@ $("#confirmartransferencia_btn").click(function() {
         }
         //Chequear que la cuenta de origen tenga suficiente saldo
         $.ajax({
-          url: "http://www.mocky.io/v2/5b2253412e00002a00e3162f",
+          url: "https://www.mocky.io/v2/5b2253412e00002a00e3162f",
           type: "GET",
           dataType:"jsonp",
           success: function(response){
@@ -255,7 +255,7 @@ $("#confirmartransferencia_btn").click(function() {
               }
               //Obtener cuenta destino
               $.ajax({
-                url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+                url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
                 type: "GET",
                 dataType:"jsonp",
                 success: function(response){
@@ -270,7 +270,7 @@ $("#confirmartransferencia_btn").click(function() {
 
                     //Realizar movimiento en cuenta de origen
                     $.ajax({
-                      url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+                      url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
                       data: movimiento,
                       type: "POST",
                       dataType:"jsonp",
@@ -286,7 +286,7 @@ $("#confirmartransferencia_btn").click(function() {
     
                           //Realizar movimiento en cuenta destino
                           $.ajax({
-                            url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+                            url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
                             data: movimiento,
                             type: "POST",
                             dataType:"jsonp",
@@ -328,7 +328,7 @@ $("#confirmarultimos_btn").click(function() {
 
   //Obtener la cuenta a consultar
   $.ajax({
-    url: "http://www.mocky.io/v2/5b2253032e00009100e3162b",
+    url: "https://www.mocky.io/v2/5b2253032e00009100e3162b",
     type: "GET",
     dataType:"jsonp",
     beforeSend: function() {
@@ -343,7 +343,7 @@ $("#confirmarultimos_btn").click(function() {
         }
         //Realizar la consulta
         $.ajax({
-          url: "http://www.mocky.io/v2/5b2276372e00007e00e316cf",
+          url: "https://www.mocky.io/v2/5b2276372e00007e00e316cf",
           type: "GET",
           dataType:"jsonp",
           success: function(response){
