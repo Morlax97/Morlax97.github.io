@@ -1,1 +1,192 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" href="css/materialize.css" type="text/css">
+     <link rel="stylesheet" href="css/materialize.min.css" type="text/css">
+     <title>Doki Doki ATM</title>
+</head>
+<body style="background-color: #B8D8D8; color:black;">
+     <nav style = "background-color:#4F6367;" role="navigation">
+          <div class="nav-wrapper container">
+               <a id="logo-container" href="#" class="brand-logo">Doki Doki Bank ATM</a>
+          </div>
+     </div>
+     <div class="container" style="color: black; top:30%; width:60%; left:20%; position:fixed;" id="login_scr">
+          <div class="card" style="background-color:#EEF5DB;">
+               <div class="row center">
+                    <h4>Ingrese sus credenciales</h4>
+                    <div class="input-field" style="width:60%; margin-left:20%;">
+                         <input id="user_id" type="text">
+                         <label for="user_id">Nro. de cliente</label>
+                    </div>
+                    <div class="input-field" style="width:60%; margin-left:20%;">
+                         <input id="user_pwd" type="password">
+                         <label for="user_pwd">Contraseña</label>
+                    </div>
+                    <a class="waves-effect waves-light btn" id="submit_btn">Iniciar sesión</a>
+               </div>
+          </div>
+     </div>
+
+     <div class="container" style="color:black; top:30%; width:60%; left:20%; position:fixed;" id="atm_scr">
+          <div class="card large" style="background-color:#EEF5DB">
+               <div class="row">
+                    <div class="col s2" style="margin-top:2%;">
+                         <div class="row" style="height: 20px"></div>
+                         <div class="row"><a class="waves-effect waves-light btn-large" style="width:100%;"  id="consultar_btn"><h6>Consultar saldo</h6></a></div>
+                         <div class="row" style="height: 50px"></div>
+                         <div class="row"><a class="waves-effect waves-light btn-large" style="width:100%;"  id="extraer_btn"><h6>Extraer</h6></a></div>
+                         <div class="row" style="height: 50px"></div>
+                         <div class="row"><a class="waves-effect waves-light btn-large" style="width:100%;"  id="ultimos_btn"><h6>Ultimos Mov.</h6></a></div>
+                    </div>
+
+                    <div class="col s8 center-align">
+                         <div id="consultar_scr">
+                              <div class="card medium" style="margin-top:50px;background-color:#cfd6be">
+                                   <div class="card-content">
+                                        <span class="card-title"> <h5><br>Saldo actual: </h5> </span>
+                                        <h4 style="color:green;"><br><div id="consultar_saldo">$0</div></h4>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="cuentaconsultar_txt" type="text">
+                                             <label for="cuentaconsultar_txt">Cuenta</label>
+                                        </div>
+                                        <a class="waves-effect waves-light btn" id="confirmarconsulta_btn">Confirmar</a>
+                                        <div id="consultar_estado"><h6>Esperando operación</h6></div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div id="extraer_scr">
+                              <div class="card medium" style="margin-top:50px;background-color:#cfd6be;">
+                                   <div class="card-content">
+                                        <span class="card-title"><h5><br>Extraer:</h5></span>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="cuentaextraer_txt" type="text">
+                                             <label for="cuentaextraer_txt">Cuenta</label>
+                                        </div>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="cantidadextraer_txt" type="text">
+                                             <label for="cantidadextraer_txt">Cantidad</label>
+                                        </div>
+                                        <a class="waves-effect waves-light btn" id="confirmarextraccion_btn">Confirmar</a>
+                                        <div id="extraer_estado"> <h6>Esperando operación</h6></div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div id="ultimos_scr">
+                              <div class="card medium" style="margin-top:50px;background-color:#cfd6be;">
+                                   <div class="card-content">
+                                        <span class="card-title"><h6>Ultimos movimientos:</h6> </span>
+                                        <div id="ultimos_cuenta">
+                                             <div class="input-field" style="width:60%; margin-left:20%;">
+                                                  <input id="cuentaultimos_txt" type="text">
+                                                  <label for="cuentaultimos_txt">Cuenta</label>
+                                             </div>
+                                             <a class="waves-effect waves-light btn" id="confirmarultimos_btn">Confirmar</a>
+                                        </div>
+                                        <div>
+                                             <table>
+                                                  <thead>
+                                                       <tr style="line-height:1px;">
+                                                            <th>Fecha</th>
+                                                            <th>Cantidad</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr style="line-height:1px;">
+                                                            <td id="t11"></td>
+                                                            <td id="t12"></td>
+                                                       </tr>
+                                                       <tr style="line-height:1px;">
+                                                            <td id="t21"></td>
+                                                            <td id="t22"></td>
+                                                       </tr>
+                                                       <tr style="line-height:1px;">
+                                                            <td id="t31"></td>
+                                                            <td id="t32"></td>
+                                                       </tr>
+                                                       <tr style="line-height:1px;">
+                                                            <td id="t41"></td>
+                                                            <td id="t42"></td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </div>
+                                        <div id="ultimos_estado"> <h6>Esperando operación</h6></div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div id="transferir_scr">
+                              <div class="card medium" style="margin-top:50px;background-color:#cfd6be">
+                                   <div class="card-content">
+                                        <span class="card-title" style="margin-bottom: 0px"><h5>Transferir:</h5></span>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="origentransferir_txt" type="text">
+                                             <label for="origentransferir_txt">Cuenta origen</label>
+                                        </div>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="cantidadtransferir_txt" type="text">
+                                             <label for="cantidadtransferir_txt">Cantidad</label>
+                                        </div>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="destinotransferir_txt" type="text">
+                                             <label for="destinotransferir_txt">Cuenta destino</label>
+                                        </div>
+                                        <a class="waves-effect waves-light btn" id="confirmartransferencia_btn">Confirmar</a>
+                                        <div id="transferir_estado" > <h6>Esperando operación</h6></div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div id="depositar_scr">
+                              <div class="card medium" style="margin-top:50px;background-color:#cfd6be;">
+                                   <div class="card-content">
+                                        <span class="card-title"><h5><br>Depositar:</h5></span>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="cuentadepositar_txt" type="text">
+                                             <label for="cuentadepositar_txt">Cuenta</label>
+                                        </div>
+                                        <div class="input-field" style="width:60%; margin-left:20%;">
+                                             <input id="cantidaddepositar_txt" type="text">
+                                             <label for="cantidaddepositar_txt">Cantidad</label>
+                                        </div>
+                                        <a class="waves-effect waves-light btn" id="confirmardeposito_btn">Confirmar</a>
+                                        <div id="depositar_estado"> <h6>Esperando operación</h6><br></div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div id="salir_scr">
+                              <div class="card medium" style="margin-top:50px;background-color:#cfd6be;">
+                                   <div class="card-content">
+                                        <a class="waves-effect waves-light btn-large" style="margin-top:20%" id="confirmarsalir_btn">Salir</a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col s2" style="margin-top:2%;">
+                         <div class="row" style="height: 20px"></div>
+                         <div class="row"><a class="waves-effect waves-light btn-large" style="width:100%;" id="transferir_btn"><h6>Realizar transf.</h6></a></div>
+                         <div class="row" style="height: 50px"></div>
+                         <div class="row"><a class="waves-effect waves-light btn-large" style="width:100%;" id="depositar_btn"><h6>Realizar deposito</h6></a></div>
+                         <div class="row" style="height: 50px"></div>
+                         <div class="row"><a class="waves-effect waves-light btn-large" style="width:100%;" id="salir_btn"><h6>Salir</h6></a></div>
+                    </div>
+
+               </div>
+          </div>
+     </div>
+     <footer class="page-footer grey darken-3" style="bottom:0;width:100%;position:fixed;">
+          <div class="container" style="height:50px;">
+               <div class="valign-wrapper center-align">
+                    <h6 style="margin-left:15%;">Creado por <a href="https://github.com">Milton Torasso</a> y <a href="https://github.com">Joaquín León</a>.</h6>
+               </div>
+          </div>
+     </footer>
+
+     <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min
+.js"></script>
+     <script src="js/materialize.js"></script>
+     <script src="js/script.js"></script>
+</body>
+</html>
